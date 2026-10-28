@@ -1,0 +1,132 @@
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--noire-bg);
+}
+
+.hero__bg-wrap {
+  position: absolute;
+  inset: -12% 0;
+  will-change: transform;
+}
+
+.hero__bg {
+  width: 100%;
+  height: 100%;
+  background-image:
+    url("/images/hero.jpg"),
+    radial-gradient(ellipse at 30% 20%, #2a241a 0%, #0b0b0b 70%);
+  background-size: cover;
+  background-position: center;
+  animation: slowZoom 20s var(--ease) forwards;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 0%, rgba(11, 11, 11, 0.35) 45%, rgba(11, 11, 11, 0.9) 100%);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--nav-height);
+  padding-bottom: 6rem;
+}
+
+.hero__title {
+  max-width: 14ch;
+  margin-bottom: 1.5rem;
+}
+
+.hero__text {
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+  color: var(--noire-text);
+  opacity: 0.85;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 1.75rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--noire-muted);
+  transform: translateX(-50%);
+}
+
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: var(--noire-gold);
+  animation: scrollCue 2.4s var(--ease) infinite;
+}
+
+/* ---------- Brand intro ---------- */
+.media-panel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background-image:
+    url("/images/intro.jpg"),
+    linear-gradient(160deg, #26211a 0%, #141414 70%);
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--noire-border);
+}
+
+.media-panel::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid var(--noire-gold-soft);
+  pointer-events: none;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--noire-gold);
+  border-bottom: 1px solid var(--noire-gold);
+}
+
+.text-link svg {
+  transition: transform var(--dur-base) var(--ease);
+}
+
+.text-link:hover svg {
+  transform: translateX(6px);
+}
+
+@media (max-width: 575.98px) {
+  .hero__actions .btn-noire,
+  .hero__actions .btn-noire-outline {
+    width: 100%;
+  }
+}

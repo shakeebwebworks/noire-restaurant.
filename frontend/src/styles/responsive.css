@@ -1,0 +1,16 @@
+@media (max-width: 575.98px) {
+  .noire-logo { font-size: 1.4rem; letter-spacing: 0.26em; }
+  .footer-bottom { flex-direction: column; }
+}
+
+@media (min-width: 992px) {
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-flex; }
+  .nav-toggle { display: none; }
+  .mobile-menu { display: none; }
+  .back-to-top { right: 2rem; }
+}
+
+@media (min-width: 1400px) {
+  :root { --container-max: 1360px; }
+}

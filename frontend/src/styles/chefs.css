@@ -1,0 +1,113 @@
+/* ==========================================================
+   CHEFS
+   ========================================================== */
+
+.chef-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--noire-bg);
+  border: 1px solid var(--noire-border-soft);
+  transition: border-color var(--duration-base) var(--ease-luxury);
+}
+
+.chef-card:hover {
+  border-color: var(--noire-border);
+}
+
+.chef-card__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--noire-bg-alt);
+}
+
+.chef-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(0.35) contrast(1.05);
+  transition: transform 1.2s var(--ease-luxury),
+    filter var(--duration-base) var(--ease-luxury);
+}
+
+.chef-card:hover .chef-card__media img {
+  transform: scale(1.05);
+  filter: grayscale(0) contrast(1.05);
+}
+
+/* Elegant placeholder with the chef's initial (until a portrait is uploaded) */
+.chef-card__fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 20%, #2a2418 0%, #141414 75%);
+}
+
+.chef-card__fallback span {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--noire-gold);
+  opacity: 0.55;
+}
+
+.chef-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.75rem;
+}
+
+.chef-card__role {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--noire-gold);
+}
+
+.chef-card__name {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.7rem;
+}
+
+.chef-card__specialty {
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--noire-text);
+}
+
+.chef-card__bio {
+  flex: 1;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.chef-card__rec {
+  margin: 0.5rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--noire-border-soft);
+  font-size: 0.9rem;
+  color: var(--noire-text);
+}
+
+.chef-card__rec span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--noire-text-muted);
+}
+
+/* Loading placeholder */
+.chef-skeleton {
+  aspect-ratio: 4 / 6;
+  border: 1px solid var(--noire-border-soft);
+}

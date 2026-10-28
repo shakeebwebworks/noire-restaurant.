@@ -1,0 +1,82 @@
+﻿/* ==========================================================
+   OUR STORY
+   ========================================================== */
+
+.story-section {
+  background: var(--noire-bg-alt);
+  overflow: hidden;
+}
+
+.story-lead {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  line-height: 1.55;
+  color: var(--noire-text);
+}
+
+/* Photo with a gold frame offset to the left (mirrors the intro) */
+.story-media {
+  position: relative;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.story-media__frame {
+  position: absolute;
+  z-index: 0;
+  top: 1.25rem;
+  left: -1.25rem;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--noire-border);
+  pointer-events: none;
+}
+
+.story-media .reveal-image {
+  position: relative;
+  z-index: 1;
+}
+
+/* Pillars */
+.story-pillars {
+  list-style: none;
+  margin: 2.25rem 0 2rem;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.story-pillars li {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.story-pillars__icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--noire-border);
+  color: var(--noire-gold);
+}
+
+.story-pillars__title {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.story-pillars p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 575.98px) {
+  .story-media__frame {
+    top: 0.75rem;
+    left: -0.5rem;
+  }
+}
