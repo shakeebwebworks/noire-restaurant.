@@ -9,7 +9,11 @@ load_dotenv(BASE_DIR / ".env")
 
 
 def env_list(name, default=""):
-    return [v.strip() for v in os.getenv(name, default).split(",") if v.strip()]
+    return [
+        v.strip().rstrip("/")
+        for v in os.getenv(name, default).split(",")
+        if v.strip()
+    ]
 
 
 DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() == "true"
